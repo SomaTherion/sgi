@@ -30,11 +30,11 @@ def calcularIMC(persona):	#calcula si la persona esta en su peso ideal
 	except:
 		print("Altura o peso no especificado")
 
-def esMayorDeEdad(persona): #indica si persona es mayor de edad
-        if (persona.edad>=18):
-        	return True
-        else:
-        	return False	
+def comprobarEdad(persona): #indica si persona es mayor de edad
+		if (persona.edad>=18):
+			return True
+		else:
+			return False
 
 def introducirSexo(): #introducido el sexo
 	sexo = input("Introduce sexo:")
@@ -77,7 +77,7 @@ def ejecutable():
 	for persona in listaPersonas:
 		toString(persona)
 		calcularImc(persona)
-		if esMayorDeEdad(p) == True:
+		if comprobarEdad(p) == True:
 			print("Es mayor de edad")
 		else:
 			print("Es menor de edad")	
