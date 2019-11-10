@@ -43,9 +43,6 @@ def introducirSexo(): #introducido el sexo
 	else:
 		return 'M'
 
-def toString(persona): #Devuelve toda la informacion del objeto persona
-	print("Nombre:", persona.nombre, "\nEdad:", persona.edad, "\nDNI:", persona.dni, "\nSexo:", persona.sexo, "\nPeso:", persona.peso,
-	 "\nAltura:", persona.altura)
 
 def generaDni(): #Genera dni y calcula su letra
 	dniNum = random.randrange(00000000,99999999)
@@ -55,6 +52,10 @@ def generaDni(): #Genera dni y calcula su letra
 	dni = dniNumeroString+letra
 	return dni
 
+
+def toString(persona): #Devuelve toda la informacion del objeto persona
+	print("Nombre:", persona.nombre, "\nEdad:", persona.edad, "\nDNI:", persona.dni, "\nSexo:", persona.sexo, "\nPeso:", persona.peso,
+	 "\nAltura:", persona.altura)
 
 #Ejecutable
 def ejecutable():
@@ -66,10 +67,17 @@ def ejecutable():
 	dni = generaDni()
 
 	#Creamos tres objetos
+	# El primer objeto obtendrá las anteriores variables pedidas por teclado
 	persona = Persona(nombre, edad, generaDni(), sexo, peso, altura)
+	#el segundo objeto obtendrá todos los anteriores menos el peso y la altura
 	persona2 = Persona(nombre, edad, generaDni(), sexo)
+	#el último por defecto, para este último utiliza los métodos set para darle a los atributos un valor.
 	persona3 = Persona() #por defecto
-	persona3.nombre = "Nombre por defecto"
+	persona3.edad = "Francisco"
+	persona3.edad = 25
+	persona3.sexo = 'H'
+	persona3.peso = 83.2
+	persona3.altura = 1.85
 
 	listaPersonas = [persona, persona2, persona3]
 
@@ -84,10 +92,6 @@ def ejecutable():
 
 ejecutable()
 
-#Llamamos a la funcion pasandole la persona
-print(calcularImc(persona))
-print(esMayorDeEdad(persona))
-toString(persona)
 
 
 
